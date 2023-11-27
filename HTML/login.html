@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #Edeae5;
+        }
+        .formulario{
+            text-align: center;
+            margin-bottom: 45px;
+        }
+        input{
+            display: block;
+            margin-top: 15px;
+            width: 300px;
+            border-radius: 10px;
+            border-color: transparent;
+        }
+        button{
+            margin-top: 15px;
+            
+        }
+        #contenedor{
+            width: 400px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .noms{
+            font-size: 1em;
+            margin-bottom:2px ;
+            filter: drop-shadow(0 0 0.5rem #000000);
+        }
+        h1{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            filter: drop-shadow(0 0 0.5rem #000000);
+        }
+        .may_cont{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #EAF0CE;
+            border-radius: 68px 10px 94px 10px;
+            -webkit-border-radius: 68px 10px 94px 10px;
+            -moz-border-radius: 68px 10px 94px 10px;
+            border: 1px solid #000;
+        }
+        .botones{
+            margin-bottom: 10px;
+            margin-left: 35px;
+            margin-right: 35px;
+            width: 75px;
+            background-color: #7D8491;
+            border-color: transparent;
+            border-radius: 10px;
+        }
+        .noms_bot{
+            filter: drop-shadow(0 0 0.1rem #424040);
+        }
+        .botones:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body onload="cargue()">
+    <div class="may_cont">
+    <h1>Registro</h1>
+    <div id="contenedor">
+        <form action="" class="formulario">
+            <h2 class="noms">Nombre</h2>
+            <input type="text" id="usuario_1" onblur="validacion_1()">
+            <h2 class="noms">Email</h2>
+            <input type="email" id="email_1">
+            <h2 class="noms">Contraseña</h2>
+            <input type="password" id="contra_1" onblur="contra_val()">
+            <button type="submit" onclick="subir()" class="botones"><span class="noms_bot">Registro</span></button>
+            <button type="reset" onclick="borrar()" class="botones"><span class="noms_bot">Resetear</span></button>
+        </form>
+    </div>
+    </div>
+    <script>
+        function cargue() {
+            document.getElementById("usuario_1").focus();
+        }
+        function validacion_1() {
+            console.log(1);
+            let usuario = document.getElementById("usuario_1").value;
+            let usuario_style = document.getElementById("usuario_1");
+            if (usuario.length<3 ) {
+                usuario_style.style.borderColor="red";
+            }else{
+                usuario_style.style.borderColor="green";
+            }
+        }
+        function contra_val() {
+            let contra = document.getElementById("contra_1").value;
+            let contra_style = document.getElementById("contra_1");
+            if (contra.length<7) {
+                contra_style.style.borderColor="red";
+            }else{
+                contra_style.style.borderColor="green";
+            }
+        }
+
+        function subir() {
+            let contra = document.getElementById("contra_1").value;
+            let usuario = document.getElementById("usuario_1").value;
+            if (usuario.length<3 && contra.length<7) {
+                alert("Vuelva a digitar los datos")   
+            }else{
+                alert("Bienvenido")
+                
+            }
+        }
+    </script>
+</body>
+</html>
