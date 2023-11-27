@@ -86,7 +86,7 @@
             <input type="email" id="email_1">
             <h2 class="noms">Contraseña</h2>
             <input type="password" id="contra_1" onblur="contra_val()">
-            <button type="submit" onclick="subir()" class="botones"><span class="noms_bot">Registro</span></button>
+            <button type="button" onclick="subir()" class="botones"><span class="noms_bot">Registro</span></button>
             <button type="reset" onclick="borrar()" class="botones"><span class="noms_bot">Resetear</span></button>
         </form>
     </div>
@@ -121,8 +121,8 @@
             if (usuario.length<3 && contra.length<7) {
                 alert("Vuelva a digitar los datos")   
             }else{
-                alert("Bienvenido")
-                
+                alert("Bienvenido");
+                window.location.replace("../index.html");
             }
         }
     </script>
